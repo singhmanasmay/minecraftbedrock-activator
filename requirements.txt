@@ -1,0 +1,12 @@
+os
+shutil
+time
+subprocess
+threading
+functools
+pyuac
+customtkinter
+winaccent
+PIL
+ctypes
+pywin32
