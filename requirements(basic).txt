@@ -5,5 +5,4 @@ time
 subprocess
 msvcrt
 pyuac
-handlecatcher
 pywin32
