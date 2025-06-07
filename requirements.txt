@@ -7,6 +7,6 @@ functools
 pyuac
 customtkinter
 winaccent
-PIL
+Pillow
 ctypes
 pywin32
