@@ -84,7 +84,7 @@ def activate():
                 if syswow64exists:
                     shutil.copy2(os.path.join(os.path.dirname(__file__),r'payload\SysWOW64\Windows.ApplicationModel.Store.dll'),os.path.join(os.environ['WINDIR'],'SYSWOW64'))
                     print('syswow64 patched\n')
-                    print('Minecraft Bedrock Activated.\nPlease restart Minecraft Bedrock.')
+                print('Minecraft Bedrock Activated.\nPlease restart Minecraft Bedrock.')
             except Exception as e:
                 # Handle any errors during the activation process
                 print(e)
