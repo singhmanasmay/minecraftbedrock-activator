@@ -203,7 +203,7 @@ def activate():
                 if syswow64exists:
                     shutil.copy2(os.path.join(os.path.dirname(__file__),r'payload\SysWOW64\Windows.ApplicationModel.Store.dll'),os.path.join(os.environ['WINDIR'],'SYSWOW64'))
                     log('syswow64 patched')
-                    output('Minecraft Bedrock Activated.\nPlease restart Minecraft Bedrock.','#7CFC00')
+                output('Minecraft Bedrock Activated.\nPlease restart Minecraft Bedrock.','#7CFC00')
             except Exception as e:
                 log(str(e))
                 output('An unexpected error occurred.\nPlease report at:\nhttps://github.com/singhmanasmay/minecraftbedrock-activator/issues','#FF0000')
