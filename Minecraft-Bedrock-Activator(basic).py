@@ -52,30 +52,30 @@ def activate():
                          '╚═════╝░╚═╝░░╚═╝╚══════╝╚══════╝╚═╝░░╚═╝╚══════╝░╚════╝░╚═╝░░╚══╝','https://github.com/singhmanasmay','\n']))
         print(f'administrator granted= {admin}')
         print(f'system32 exists= {system32exists}')
-        print(f'syswow64 exists= {syswow64exists}\n')
+        print(f'syswow64 exists= {syswow64exists}')
 
     # Main activation logic
     if admin:
         if system32exists:
             try:
                 # Take ownership of System32 DLL
-                print(str(subprocess.check_output(r'takeown /f "C:\Windows\System32\Windows.ApplicationModel.Store.dll" /a'))+'\n')
+                print(str(subprocess.check_output(r'takeown /f "C:\Windows\System32\Windows.ApplicationModel.Store.dll" /a'),'utf-8'))
                 if syswow64exists:
                     # Take ownership of SysWOW64 DLL if it exists
-                    print(str(subprocess.check_output(r'takeown /f "C:\Windows\SysWOW64\Windows.ApplicationModel.Store.dll" /a'))+'\n')
+                    print(str(subprocess.check_output(r'takeown /f "C:\Windows\SysWOW64\Windows.ApplicationModel.Store.dll" /a'),'utf-8'))
                 time.sleep(2)  # Wait for ownership changes to take effect
 
                 # Grant modify permissions to administrators
-                print(str(subprocess.check_output(r'icacls "C:\Windows\System32\Windows.ApplicationModel.Store.dll" /grant Administrators:(M)'))+'\n')
+                print(str(subprocess.check_output(r'icacls "C:\Windows\System32\Windows.ApplicationModel.Store.dll" /grant Administrators:(M)'),'utf-8'))
                 if syswow64exists:
-                    print(str(subprocess.check_output(r'icacls "C:\Windows\SysWOW64\Windows.ApplicationModel.Store.dll" /grant Administrators:(M)'))+'\n')
+                    print(str(subprocess.check_output(r'icacls "C:\Windows\SysWOW64\Windows.ApplicationModel.Store.dll" /grant Administrators:(M)'),'utf-8'))
 
                 # Kill processes that are using the DLL files
                 for pid in handlecatcher.handlecatcher(r"C:\Windows\System32\Windows.ApplicationModel.Store.dll"):
-                    print(str(subprocess.check_output(f'taskkill /f /pid {pid}'))+'\n')
+                    print(str(subprocess.check_output(f'taskkill /f /pid {pid}'),'utf-8'))
                 if syswow64exists:
                     for pid in handlecatcher.handlecatcher(r"C:\Windows\SysWOW64\Windows.ApplicationModel.Store.dll"):
-                        print(str(subprocess.check_output(f'taskkill /f /pid {pid}'))+'\n')
+                        print(str(subprocess.check_output(f'taskkill /f /pid {pid}'),'utf-8'))
                 time.sleep(3)  # Wait for processes to terminate
 
                 # Replace original DLL with modified version
