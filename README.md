@@ -20,7 +20,7 @@ pip install -r requirements.txt
 3. Run `Minecraft-Bedrock-Activator.pyw`
 
 > [!TIP]
-> A minimal dependency terminal based version is also available as [Minecraft-Bedrock-Activator(basic).py](Minecraft-Bedrock-Activator(basic).py) with requirements in [requirements(basic).txt](requirements(basic).txt).
+> A minimal dependency terminal based version is also available as [Minecraft-Bedrock-Activator(cli).py](Minecraft-Bedrock-Activator(cli).py) with requirements in [requirements(cli).txt](requirements(cli).txt).
 
 ## Requirements
 
